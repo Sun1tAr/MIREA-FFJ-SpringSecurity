@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-sec
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database: postgresql
+    properties:
+      hibernate:
+        default_schema: ${SERVICE_SCHEME:rpr_user}
+
+
+
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:32770/rpr3_ms_db}
+    username: ${POSTGRES_USER:mUrrZer}
+    password: ${POSTGRES_PASSWORD:uRuRu1222}
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: ${SERVICE_PORT:8080}
+
+
+ms:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:5sWrJ1E2gD0oby56Z13i309p06oFX2gKFwN83BX95VRx26kqqy2Awfs783sL2BFO0TBil4g0}
+      access-lifetime: ${JWT_ACCESS_LIFETIME:1d}

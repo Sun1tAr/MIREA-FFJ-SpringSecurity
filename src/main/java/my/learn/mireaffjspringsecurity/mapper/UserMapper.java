@@ -5,23 +5,10 @@ import my.learn.mireaffjspringsecurity.entity.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
-
+import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface UserMapper {
-
-    /**
-     * Осуществляет маппинг сущности пользователя на DTO пользователя
-     *
-     * @param user сущность пользователя
-     * @return DTO пользователя
-     */
-    @Mapping(target = "login", source = "login")
-    @Mapping(target = "uuid", source = "uuid")
-    @Mapping(target = "encryptedPass", source = "password")
-    @Mapping(target = "roles", source = "role")
-    UserDTO toUserDTO(UserEntity user);
-
 
     /**
      * Осуществляет маппинг входных данных для создания и регистрации пользователя

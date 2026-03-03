@@ -1,12 +1,12 @@
-package ru.ntdev.rpr.rpr_ms_rest.service.impl;
+package my.learn.mireaffjspringsecurity.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import my.learn.mireaffjspringsecurity.constants.JwtClaims;
+import my.learn.mireaffjspringsecurity.entity.UserEntity;
+import my.learn.mireaffjspringsecurity.service.JwtService;
+import my.learn.mireaffjspringsecurity.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.ntdev.rpr.rpr_ms_rest.constants.JwtClaims;
-import ru.ntdev.rpr.rpr_ms_rest.dto.internal.UserDTO;
-import ru.ntdev.rpr.rpr_ms_rest.service.JwtService;
-import ru.ntdev.rpr.rpr_ms_rest.utils.JwtUtils;
 
 import javax.crypto.SecretKey;
 import java.time.Duration;
@@ -22,7 +22,7 @@ public class JwtServiceImpl implements JwtService {
     private Duration jwtLifetime;
 
     @Override
-    public String getJwtForUser(UserDTO user) {
+    public String getJwtForUser(UserEntity user) {
         Date issuedAt = new Date();
         Date expiresAt = new Date(issuedAt.getTime() + jwtLifetime.toMillis());
         return JwtUtils.generateToken(user, expiresAt, secretKey);

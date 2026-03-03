@@ -1,7 +1,6 @@
-package ru.ntdev.rpr.rpr_ms_rest.service;
+package my.learn.mireaffjspringsecurity.service;
 
-import ru.ntdev.rpr.rpr_ms_rest.dto.internal.UserDTO;
-
+import my.learn.mireaffjspringsecurity.entity.UserEntity;
 
 public interface JwtService {
 
@@ -9,7 +8,7 @@ public interface JwtService {
      * @param user DTO пользователя с учетными данными
      * @return сгенерированный JWT для данных указанного пользователя
      */
-    String getJwtForUser(UserDTO user);
+    String getJwtForUser(UserEntity user);
 
     /** Проверяет валидность JWT токена (подпись, клеймы)
      * @param token JWT
