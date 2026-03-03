@@ -76,11 +76,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    /** Добавляет тело с описанием проблемы в Http response
-     * @param response сущность ответа
-     * @param status статус ответа
-     * @param message описание проблемы
-     */
     private void putErrorToResponseBody(HttpServletResponse response, HttpStatus status, String message) {
         response.setStatus(status.value());
         response.setContentType("application/json");

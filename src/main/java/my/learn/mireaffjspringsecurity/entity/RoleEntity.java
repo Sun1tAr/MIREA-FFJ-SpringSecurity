@@ -26,7 +26,6 @@ public class RoleEntity implements GrantedAuthority {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-
     @Override
     public @Nullable String getAuthority() {
         return role.name();

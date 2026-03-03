@@ -60,7 +60,7 @@ public class AuthServiceImpl implements AuthService {
         UserEntity user = userService.findUserByLogin(login);
 
         if (isSuccessfulAuth(login, resetPasswordDTO.getOldPassword())) {
-            user.setPassword(passwordEncoder.encode(resetPasswordDTO.getNewPassword())); //todo проверить отслеживаемость EM
+            user.setPassword(passwordEncoder.encode(resetPasswordDTO.getNewPassword()));
         } else {
             throw new RuntimeException("INCORRECT_LOGIN_OR_PASS");
         }
