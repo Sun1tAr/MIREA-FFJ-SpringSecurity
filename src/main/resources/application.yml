@@ -14,8 +14,8 @@ spring:
 
   datasource:
     url: ${POSTGRES_URL:jdbc:postgresql://localhost:32770/rpr3_ms_db}
-    username: ${POSTGRES_USER:mUrrZer}
-    password: ${POSTGRES_PASSWORD:uRuRu1222}
+    username: ${POSTGRES_USER:change-me}
+    password: ${POSTGRES_PASSWORD:change-me}
     driver-class-name: org.postgresql.Driver
 
 server:
@@ -25,5 +25,5 @@ server:
 ms:
   security:
     jwt:
-      secret: ${JWT_SECRET:5sWrJ1E2gD0oby56Z13i309p06oFX2gKFwN83BX95VRx26kqqy2Awfs783sL2BFO0TBil4g0}
+      secret: ${JWT_SECRET:Y2hhbmdlLW1lLWp3dC1zZWNyZXQtZm9yLWxvY2FsLXRlc3Q=}
       access-lifetime: ${JWT_ACCESS_LIFETIME:1d}
